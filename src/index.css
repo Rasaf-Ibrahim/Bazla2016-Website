@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Atma&family=Indie+Flower&family=Kaushan+Script&family=Lobster+Two&family=Roboto&family=Roboto+Mono&family=Train+One&family=Yatra+One&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+
+/* heading */
+
+.heading-1_r{
+ @apply
+ text-3xl md:text-4xl xl:text-5xl;
+}
+
+.heading-2_r{
+    @apply
+    text-2xl md:text-3xl xl:text-4xl;
+}
+
+.heading-3_r{
+    @apply
+    text-xl md:text-2xl xl:text-3xl;
+}
+
+
+
+
+/* Button */
+
+
+.btn_r{
+    @apply 
+    cursor-pointer
+    rounded-xl
+    py-2 px-3 md:py-3 md:px-4
+    text-sm md:text-base xl:text-lg
+    font-bold;
+}
+
+.btn-ghost_r{
+    @apply   border-2 focus:outline-none ;
+}
