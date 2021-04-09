@@ -4,6 +4,7 @@ import info from '../views/info.vue'
 import detail from '../views/detail.vue'
 import edit from '../views/edit.vue'
 import add from '../views/add.vue'
+import login from '../views/login.vue'
 
 
 
@@ -20,7 +21,7 @@ const routes = [
     component: info
   },
   {
-    path: '/detail',
+    path: '/:id',
     name: 'detail',
     component: detail
   },
@@ -34,7 +35,11 @@ const routes = [
     name: 'edit',
     component: edit
   },
-
+  {
+    path: '/login',
+    name: 'login',
+    component: login
+  },
 
 
 ]

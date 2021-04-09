@@ -1,6 +1,5 @@
 <template>
-    <div class="max-w-screen-sm md:max-w-3/4 mx-auto
-         font-regular-space">
+    <div class="max-w-98% sm:max-w-90% md:max-w-75%  mx-auto">
 
 
         <!-- Title -->
@@ -17,7 +16,7 @@
         <div v-for="student in students" :key="student.firebase_id"
              class="flex justify-between items-center 
              p-2
-             border-b-2 border-gray-200 shadow
+             border-2 border-indigo-200 shadow
            bg-gray-100 hover:bg-white">
              
 
@@ -26,11 +25,12 @@
                   {{student.name}}
             </span>
 
+           <router-link v-bind:to="{ name:'detail',params: {id:student.id}}"   
+                        class="btn_r btn-transition-scale_r bg-indigo-800 text-white border-green-800 hover:bg-indigo-600">
 
-            <button class="btn_r btn-ghost_r 
-                  border-green-800 text-green-800 hover:bg-green-800 hover:text-white">
-                  Details
-            </button>
+                         Details
+
+            </router-link>
 
 
         </div>
@@ -39,7 +39,7 @@
 </template>
 
 <script>
-    import db from '../components/firebaseinit'
+    import database from '../components/firebaseinit'
     export default {
         name: 'info',
         data() {
@@ -48,7 +48,7 @@
             }
         },
         created() {
-            db.collection('info').get().then(querySnapshot => {
+            database.collection('info').get().then(querySnapshot => {
                 querySnapshot.forEach(doc => {
                     const data = {
 
