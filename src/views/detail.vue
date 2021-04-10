@@ -47,16 +47,35 @@
         </div>
 
 
-        <!-- Back Button -->
-        <router-link to="/info">
+        <!-- back & edit button -->
 
-            <button class="mt-8
-                    btn_r btn-transition-scale_r
-                  bg-indigo-800 hover:bg-indigo-600 text-white ">
-                   Back
-            </button>
+        <div class=" mt-8 flex justify-between">
+
+            <router-link to="/info">
+
+                <button class="btn_r btn-transition-scale_r
+                      bg-indigo-800 hover:bg-indigo-600 text-white ">
+                        Back
+                </button>
         
-        </router-link>
+            </router-link>
+
+
+             <router-link :to="{name:'update', params:{id:id}}">
+
+                <button class="btn_r btn-transition-scale_r
+                      bg-indigo-800 hover:bg-indigo-600 text-white ">
+                        Edit
+                </button>
+        
+            </router-link>
+
+        
+
+
+
+
+        </div>
 
     </div>
 
@@ -90,8 +109,8 @@ import database from '../components/firebaseinit'
       },
 
        beforeRouteEnter(to, from, next) {
-         database.collection('info').where('id', '==', to.params.id).get().then(Snapshot => {
-             Snapshot.forEach(doc=> {
+         database.collection('info').where('id', '==', to.params.id).get().then(querySnapshot => {
+             querySnapshot.forEach(doc=> {
                  next( vm => {
 
                     vm.id = doc.data().id,
@@ -120,8 +139,8 @@ import database from '../components/firebaseinit'
 
         methods: {
             fetchdata() {
-                database.collection('info').where('id', '==', this.$route.params.id).get().then(Snapshot => {
-                    Snapshot.forEach(doc => {
+                database.collection('info').where('id', '==', this.$route.params.id).get().then(querySnapshot => {
+                    querySnapshot.forEach(doc => {
                         this.id = doc.data().id,
                         this.name = doc.data().name,
                         this.current_address = doc.data().current_address,

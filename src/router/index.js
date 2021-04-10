@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import home from '../views/home.vue'
 import info from '../views/info.vue'
 import detail from '../views/detail.vue'
-import edit from '../views/edit.vue'
+import update from '../views/update.vue'
 import add from '../views/add.vue'
 import login from '../views/login.vue'
 
@@ -31,9 +31,9 @@ const routes = [
     component: add
   },
   {
-    path: '/edit',
-    name: 'edit',
-    component: edit
+    path: '/edit/:id',
+    name: 'update',
+    component: update
   },
   {
     path: '/login',

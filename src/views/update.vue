@@ -7,13 +7,13 @@
         <h1 class="heading-1_r font-cursive-2
             text-green-800 
             text-center m-8 ">
-            Add a New Student
+            Edit
         </h1> 
 
  
         <!-- Form -->
 
-        <form @submit.prevent="save" 
+        <form @submit.prevent="updateinfo" 
               class="mt-6 bg-white shadow-md py-8 px-8
               rounded-lg border-2 border-indigo-200">
 
@@ -27,7 +27,7 @@
                         focus:outline-none border-2 focus:border-indigo-200"
 
                         type="text"
-                        placeholder="ID"
+                       
                         required />
 
 
@@ -42,7 +42,7 @@
                         focus:outline-none border-2 focus:border-indigo-200"
 
                         type="text"
-                        placeholder="Name"
+                     
                         required />
                 
 
@@ -78,9 +78,9 @@
 <script>
 import database from '../components/firebaseinit'
     export default {
-        name: 'add',
+        name: 'update',
         data() {
-             return {
+            return {
 
                id: null,
                name: null,
@@ -96,12 +96,64 @@ import database from '../components/firebaseinit'
                instagram_link: null,
                twitter_link: null
 
-        }
+         }
+        },
+
+       beforeRouteEnter(to, from, next) {
+         database.collection('info').where('id', '==', to.params.id).get().then(querySnapshot => {
+             querySnapshot.forEach(doc=> {
+                 next( vm => {
+
+                    vm.id = doc.data().id,
+                    vm.name = doc.data().name,
+                    vm.current_address = doc.data().current_address,
+                    vm.permanent_address = doc.data().permanent_address,
+                    vm.university = doc.data().university,
+                    vm.university_department = doc.data.university_department,
+                    vm.job_institution = doc.data().job_institution,
+                    vm.job_title = doc.data().job_title,
+                    vm.phone_number = doc.data().phone_number,
+                    vm.facebook_link = doc.data().facebook_link,
+                    vm.instagram_link = doc.data().instagram_link,
+                    vm.twitter_link = doc.data().twitter_link,
+                    vm.blood_group = doc.data().blood_group
+
+                 })
+
+             })
+         })
+
+  },
+        computed: {
+             '$route': 'fetchdata'
         },
 
         methods: {
-            save() {
-                database.collection('info').add({
+            fetchdata() {
+                database.collection('info').where('id', '==', this.$route.params.id).get().then(querySnapshot => {
+                    querySnapshot.forEach(doc => {
+                        this.id = doc.data().id,
+                        this.name = doc.data().name,
+                        this.current_address = doc.data().current_address,
+                        this.permanent_address = doc.data().permanent_address,
+                        this.university = doc.data().university,
+                        this.university_department = doc.data.university_department,
+                        this.job_institution = doc.data().job_institution,
+                        this.job_title = doc.data().job_title,
+                        this.phone_number = doc.data().phone_number,
+                        this.facebook_link = doc.data().facebook_link,
+                        this.instagram_link = doc.data().instagram_link,
+                        this.twitter_link = doc.data().twitter_link,
+                        this.blood_group = doc.data().blood_group
+                    })
+                })  
+             },
+
+
+            updateinfo() {
+            database.collection('info').where('id', '==', this.$route.params.id).get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+            doc.ref.update({
                     id: this.id,
                     name: this.name,
                     current_address: this.current_address,
@@ -115,14 +167,15 @@ import database from '../components/firebaseinit'
                     instagram_link: this.instagram_link, 
                     twitter_link: this.twitter_link, 
                     blood_group: this.blood_group  
-                })
-                .then(docRef => this.$router.push('/info'))
-                .catch(error => console.log(err))
-            }
-        },
-
-
-    }
+            })
+            .then(() => {
+              this.$router.push({ name: 'detail', params: { id: this.id }})
+            });
+          })
+        })
+      }
+    }    
+}
 </script>
 
 <style scoped>
