@@ -4,9 +4,8 @@
 
 
         <!-- Title -->
-        <h1 class="heading-1_r font-cursive-2
-            text-green-800 
-            text-center m-8 ">
+        <h1 class="heading-2_r font-cursive-2
+          text-center m-6 md:m-8">
             Login
         </h1> 
 
@@ -27,9 +26,7 @@
                         placeholder="Email" />
                 
 
-                <button class="btn_r btn-transition-scale_r      
-                        hover:bg-indigo-600 text-white bg-indigo-800
-                         hover:text-white
+                <button class="btn_r btn-transition-scale_r btn-color_r
                          w-full py-2 px-4 rounded-lg m-2"
                         Login
                         type="submit">

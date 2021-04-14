@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Atma&family=Indie+Flower&family=Kaushan+Script&family=Lobster+Two&family=Roboto&family=Roboto+Mono&family=Train+One&family=Yatra+One&display=swap');
+
+
+@import './colorVariable.css';
+@import './fontSize.css';
+@import './button.css';
+@import './thisSite.css';
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+.transition_r{
+    @apply
+    transition
+    ease-out
+    duration-300;
+}
+
+
+
+
+
+
+
+
+
+
+

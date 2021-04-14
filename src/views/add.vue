@@ -1,12 +1,11 @@
 <template>
 
-    <div class="max-w-90% sm:max-w-75% md:max-w-60% lg:max-w-50% xl:max-w-40% mx-auto">
+    <div class="max-w-90% sm:max-w-md lg:max-w-lg mx-auto">
 
 
         <!-- Title -->
-        <h1 class="heading-1_r font-cursive-2
-            text-green-800 
-            text-center m-8 ">
+        <h1 class="heading-2_r font-cursive-2
+          text-center m-6 md:m-8">
             Add a New Student
         </h1> 
 
@@ -14,39 +13,143 @@
         <!-- Form -->
 
         <form @submit.prevent="save" 
-              class="mt-6 bg-white shadow-md py-8 px-8
-              rounded-lg border-2 border-indigo-200">
+              class="mt-6 mb-8 bg-dark-2_r shadow-md py-8 px-8
+              rounded-lg border-2 border-color_r">
+ 
+
+            
+            
+             <!-- ID -->
+
+            <input v-model="id"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus:border-indigo-300"
+
+                    type="text"
+                    placeholder="ID"
+                    required />
+
+           <!-- Name -->
+
+            <input v-model="name"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus:border-indigo-300"
+
+                    type="text"
+                    placeholder="Name"
+                    required />
+
+           <!-- Phone Number -->
+
+            <input v-model="phone_number"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus:border-indigo-300"
+
+                    type="text" 
+                    placeholder="Phone Number"/>
+
+           <!-- Facebook Link -->
+
+            <input v-model="facebook_link"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus:border-indigo-300"
+
+                    type="text" 
+                    placeholder="Facebook Link"/>
 
 
-                <!-- ID -->
+           <!-- Instagram Link -->
 
-                <input v-model="id"
-                       class="bg-gray-100 
-                        w-full py-2 px-4  m-2
-                        rounded-lg 
-                        focus:outline-none border-2 focus:border-indigo-200"
+            <input v-model="instagram_link"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus:border-indigo-300"
 
-                        type="text"
-                        placeholder="ID"
-                        required />
-
+                    type="text" 
+                    placeholder="Instagram Link"/>
 
 
-                    <!-- Name -->
-                    
+           <!-- Twitter Link -->
 
-                <input v-model="name"
-                       class="bg-gray-100 
-                        w-full py-2 px-4  m-2
-                        rounded-lg 
-                        focus:outline-none border-2 focus:border-indigo-200"
+            <input v-model="twitter_link"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus:border-indigo-300"
 
-                        type="text"
-                        placeholder="Name"
-                        required />
+                    type="text" 
+                    placeholder="Twitter Link"/>
+
+
+           <!-- Current Address -->
+
+            <input v-model="current_address"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus:border-indigo-300"
+
+                    type="text" 
+                    placeholder="Current Address"/>
+
+           <!-- Permanent Address -->
+
+            <input v-model="permanent_address"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus:border-indigo-300"
+
+                    type="text" 
+                    placeholder="Permanent Address"/>
+
+            
+            <!-- Educational Institution -->
+
+            <input v-model="university"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus:border-indigo-300"
+
+                    type="text" 
+                    placeholder="Educational Institution"/>
+
+
+            <!-- Major Subject -->
+
+            <input v-model="university_department"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus:border-indigo-300"
+
+                    type="text" 
+                    placeholder="Major Subject"/>
+
+
+             <!-- Blood Group -->
+
+            <input v-model="blood_group"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus:border-indigo-300"
+
+                    type="text" 
+                    placeholder="Blood Group"/>
+
                 
 
-                
 
 
 
@@ -57,10 +160,7 @@
 
 
 
-
-                <button class="btn_r btn-transition-scale_r      
-                        hover:bg-indigo-600 text-white bg-indigo-800
-                         hover:text-white
+                <button class="btn_r btn-transition-scale_r btn-color_r
                          w-full py-2 px-4 rounded-lg m-2"
                          type="submit">
                         Submit
@@ -76,7 +176,7 @@
 </template>
 
 <script>
-import database from '../components/firebaseinit'
+ import { database } from '../firebaseConfig';
     export default {
         name: 'add',
         data() {

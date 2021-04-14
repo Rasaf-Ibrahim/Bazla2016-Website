@@ -1,12 +1,26 @@
 <template>
-  <div class="flex justify-between">
-    <router-link to="/">home</router-link> 
-    <router-link to="/info">info</router-link>
-    <router-link to="/edit">edit</router-link>
-    <router-link to="/add">add</router-link>
-    <router-link to="/login">login</router-link>
-     
-  </div>
- <router-view/>
+
+  <Sidebar/>
+  <!-- <home/> -->
+  <router-view/>
+
+
 </template>
+
+
+
+<script>
+import home from './views/home'
+import Sidebar from './components/Sidebar'
+
+
+
+  export default {
+    name:'App',
+    components: {home, Sidebar}
+
+    
+  }
+
+        Sidebar</script>
 

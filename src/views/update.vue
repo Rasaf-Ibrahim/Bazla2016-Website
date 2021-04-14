@@ -1,66 +1,155 @@
 <template>
 
-    <div class="max-w-90% sm:max-w-75% md:max-w-60% lg:max-w-50% xl:max-w-40% mx-auto">
+    <div class="max-w-90% sm:max-w-md lg:max-w-lg mx-auto">
 
 
         <!-- Title -->
-        <h1 class="heading-1_r font-cursive-2
-            text-green-800 
-            text-center m-8 ">
+        <h1 class="heading-2_r font-cursive-2
+          text-center m-6 md:m-8">
             Edit
         </h1> 
 
  
         <!-- Form -->
 
-        <form @submit.prevent="updateinfo" 
-              class="mt-6 bg-white shadow-md py-8 px-8
-              rounded-lg border-2 border-indigo-200">
+        <form @submit.prevent="updateform" 
+              class="mt-6 mb-8 bg-dark-2_r shadow-md py-8 px-8
+              rounded-lg border-2 border-color_r">
 
 
-                <!-- ID -->
+            <!-- ID -->
 
-                <input v-model="id"
-                       class="bg-gray-100 
-                        w-full py-2 px-4  m-2
-                        rounded-lg 
-                        focus:outline-none border-2 focus:border-indigo-200"
+            <input v-model="student.id"
+                    class="bg-dark-3_r 
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus-border-color_r"
 
-                        type="text"
-                       
-                        required />
+                    type="text"
+                    placeholder="ID"
+                    required />
+
+           <!-- Name -->
+
+            <input v-model="student.name"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus-border-color_r"
+
+                    type="text"
+                    placeholder="Name"
+                    required />
+
+           <!-- Phone Number -->
+
+            <input v-model="student.phone_number"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus-border-color_r"
+
+                    type="text" 
+                    placeholder="Phone Number"/>
+
+           <!-- Facebook Link -->
+
+            <input v-model="student.facebook_link"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus-border-color_r"
+
+                    type="text" 
+                    placeholder="Facebook Link"/>
+
+
+           <!-- Instagram Link -->
+
+            <input v-model="student.instagram_link"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus-border-color_r"
+
+                    type="text" 
+                    placeholder="Instagram Link"/>
+
+
+           <!-- Twitter Link -->
+
+            <input v-model="student.twitter_link"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus-border-color_r"
+
+                    type="text" 
+                    placeholder="Twitter Link"/>
+
+
+           <!-- Current Address -->
+
+            <input v-model="student.current_address"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus-border-color_r"
+
+                    type="text" 
+                    placeholder="Current Address"/>
+
+           <!-- Permanent Address -->
+
+            <input v-model="student.permanent_address"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus-border-color_r"
+
+                    type="text" 
+                    placeholder="Permanent Address"/>
+
+            
+            <!-- Educational Institution -->
+
+            <input v-model="student.university"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus-border-color_r"
+
+                    type="text" 
+                    placeholder="Educational Institution"/>
+
+
+            <!-- Major Subject -->
+
+            <input v-model="student.university_department"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus-border-color_r"
+
+                    type="text" 
+                    placeholder="Major Subject"/>
+
+
+             <!-- Blood Group -->
+
+            <input v-model="student.blood_group"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus-border-color_r"
+
+                    type="text" 
+                    placeholder="Blood Group"/>
 
 
 
-                    <!-- Name -->
-                    
 
-                <input v-model="name"
-                       class="bg-gray-100 
-                        w-full py-2 px-4  m-2
-                        rounded-lg 
-                        focus:outline-none border-2 focus:border-indigo-200"
-
-                        type="text"
-                     
-                        required />
-                
-
-                
-
-
-
-
-
-
-
-
-
-
-
-                <button class="btn_r btn-transition-scale_r      
-                        hover:bg-indigo-600 text-white bg-indigo-800
-                         hover:text-white
+                <button class="btn_r btn-transition-scale_r btn-color_r
                          w-full py-2 px-4 rounded-lg m-2"
                          type="submit">
                         Submit
@@ -76,106 +165,51 @@
 </template>
 
 <script>
-import database from '../components/firebaseinit'
+
+ import { database } from '../firebaseConfig';
+
     export default {
-        name: 'update',
-        data() {
-            return {
+        name: 'detail',
 
-               id: null,
-               name: null,
-               current_address: null,
-               permanent_address: null,
-               university: null,
-               university_department: null,
-               job_institution: null,
-               job_title: null,
-               blood_group: null,
-               phone_number: null,
-               facebook_link: null,
-               instagram_link: null,
-               twitter_link: null
-
-         }
+       data() {
+        return {
+                student: {},
+                id_firebase: {}
+            }
         },
 
-       beforeRouteEnter(to, from, next) {
-         database.collection('info').where('id', '==', to.params.id).get().then(querySnapshot => {
-             querySnapshot.forEach(doc=> {
-                 next( vm => {
+        created() {
+            let db = database.collection('info').doc(this.$route.params.id);
+            db.get().then((doc) => {
 
-                    vm.id = doc.data().id,
-                    vm.name = doc.data().name,
-                    vm.current_address = doc.data().current_address,
-                    vm.permanent_address = doc.data().permanent_address,
-                    vm.university = doc.data().university,
-                    vm.university_department = doc.data.university_department,
-                    vm.job_institution = doc.data().job_institution,
-                    vm.job_title = doc.data().job_title,
-                    vm.phone_number = doc.data().phone_number,
-                    vm.facebook_link = doc.data().facebook_link,
-                    vm.instagram_link = doc.data().instagram_link,
-                    vm.twitter_link = doc.data().twitter_link,
-                    vm.blood_group = doc.data().blood_group
+                this.id_firebase = doc;
+                this.student = doc.data();
+                
 
-                 })
-
-             })
-         })
-
-  },
-        computed: {
-             '$route': 'fetchdata'
-        },
-
-        methods: {
-            fetchdata() {
-                database.collection('info').where('id', '==', this.$route.params.id).get().then(querySnapshot => {
-                    querySnapshot.forEach(doc => {
-                        this.id = doc.data().id,
-                        this.name = doc.data().name,
-                        this.current_address = doc.data().current_address,
-                        this.permanent_address = doc.data().permanent_address,
-                        this.university = doc.data().university,
-                        this.university_department = doc.data.university_department,
-                        this.job_institution = doc.data().job_institution,
-                        this.job_title = doc.data().job_title,
-                        this.phone_number = doc.data().phone_number,
-                        this.facebook_link = doc.data().facebook_link,
-                        this.instagram_link = doc.data().instagram_link,
-                        this.twitter_link = doc.data().twitter_link,
-                        this.blood_group = doc.data().blood_group
-                    })
-                })  
-             },
-
-
-            updateinfo() {
-            database.collection('info').where('id', '==', this.$route.params.id).get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-            doc.ref.update({
-                    id: this.id,
-                    name: this.name,
-                    current_address: this.current_address,
-                    permanent_address: this.permanent_address, 
-                    university: this.university,
-                    university_department: this.university_department,
-                    job_institution: this.job_institution, 
-                    job_title: this.job_title,
-                    Phone_number: this.phone_number,
-                    facebook_link: this.facebook_link, 
-                    instagram_link: this.instagram_link, 
-                    twitter_link: this.twitter_link, 
-                    blood_group: this.blood_group  
+            }).catch((error) => {
+                console.log(error)
             })
-            .then(() => {
-              this.$router.push({ name: 'detail', params: { id: this.id }})
-            });
-          })
-        })
+        },
+
+           methods: {
+            updateform(event) {
+                event.preventDefault()
+                database.collection('info').doc(this.$route.params.id)
+                .update(this.student).then(() => {
+                    console.log("User successfully updated!");
+                    this.$router.push({ name: 'detail', params: { id: this.id_firebase.id }})
+                }).catch((error) => {
+                    console.log(error);
+                });
+            }
+        }
+
       }
-    }    
-}
+
+
+
+
+       
 </script>
 
 <style scoped>
