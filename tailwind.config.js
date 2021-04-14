@@ -6,17 +6,8 @@ module.exports = {
 
     extend: {
 
-      backgroundColor: theme => ({
-        ...theme('colors'),
-        'primary': '#3490dc',
-        'secondary': '#ffed4a',
-        'danger': '#e3342f',
-       }),
 
 
-
-
-    
   // Font-Family
   fontFamily: {
     'regular': ['Roboto', 'sans-serif'],

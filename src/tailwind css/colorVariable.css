@@ -11,6 +11,19 @@
     @apply text-gray-800;
  }
  
+
+ 
+/* Text  (Hover) */
+
+.hover-text-light_r{
+    @apply hover:text-white;
+ }
+ 
+ .hover-text-dark_r{
+    @apply hover:text-gray-800;
+ }
+ 
+
  
  /* Background */
  
