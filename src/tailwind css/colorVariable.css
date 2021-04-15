@@ -1,6 +1,19 @@
 /* Global Color Style (Specially for this project) */
 
 
+ /* 
+When you are using indigo as background color, use red as the border color,pink as the button color.
+ 
+ When you are using gray as background color, use indigo as the border color,pink as the button color.
+ 
+when you are using green as the background color, use red as the background color, red as the button color. 
+
+*/
+
+
+
+
+
 /* Text */
 
 .text-light_r{
@@ -28,28 +41,28 @@
  /* Background */
  
  .bg-light-1_r{
-     @apply bg-gray-100;
+     @apply bg-indigo-100;
  }
  
  .bg-light-2_r{
-     @apply bg-gray-200;
+     @apply bg-indigo-200;
  }
  
  .bg-light-3_r{
-     @apply bg-gray-300;
+     @apply bg-indigo-300;
  }
  
  
  .bg-dark-1_r{
-     @apply bg-gray-900;
+     @apply bg-indigo-900;
  }
  
  .bg-dark-2_r{
-     @apply bg-gray-800;
+     @apply bg-indigo-800;
  }
  
  .bg-dark-3_r{
-     @apply bg-gray-700;
+     @apply bg-indigo-700;
  }
  
  
@@ -57,46 +70,45 @@
  /* Background (Hover)*/
  
  .hover-bg-light-1_r{
-     @apply hover:bg-gray-100;
+     @apply hover:bg-indigo-100;
  }
  
  .hover-bg-light-2_r{
-     @apply hover:bg-gray-200;
+     @apply hover:bg-indigo-200;
  }
  
  .hover-bg-light-3_r{
-     @apply hover:bg-gray-300;
+     @apply hover:bg-indigo-300;
  }
  
  
  .hover-bg-dark-1_r{
-     @apply hover:bg-gray-900;
+     @apply hover:bg-indigo-900;
  }
  
  .hover-bg-dark-2_r{
-     @apply hover:bg-gray-800;
+     @apply hover:bg-indigo-800;
  }
  
  .hover-bg-dark-3_r{
-     @apply hover:bg-gray-700;
+     @apply hover:bg-indigo-700;
  }
  
 
  /* Border Color */
  
  .border-color_r{
-    @apply border-indigo-200;
+    @apply border-red-100;
 }
 
 
  /* Focus:Border color */
  
  .focus-border-color_r{
-    @apply focus:border-indigo-300;
+    @apply focus:border-gray-900;
 }
  
 
- 
  
  
  

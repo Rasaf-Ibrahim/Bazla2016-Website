@@ -25,7 +25,8 @@
                     class="bg-dark-3_r
                     w-full py-2 px-4  m-2
                     rounded-lg 
-                    focus:outline-none border-2 focus:border-indigo-300"
+                    focus:outline-none border-2 
+                    focus-border-color_r"
 
                     type="text"
                     placeholder="ID"
@@ -36,8 +37,7 @@
             <input v-model="name"
                     class="bg-dark-3_r
                     w-full py-2 px-4  m-2
-                    rounded-lg 
-                    focus:outline-none border-2 focus:border-indigo-300"
+                    rounded-lg"
 
                     type="text"
                     placeholder="Name"
@@ -49,7 +49,7 @@
                     class="bg-dark-3_r
                     w-full py-2 px-4  m-2
                     rounded-lg 
-                    focus:outline-none border-2 focus:border-indigo-300"
+                    focus:outline-none border-2 focus-border-color_r"
 
                     type="text" 
                     placeholder="Phone Number"/>
@@ -60,7 +60,7 @@
                     class="bg-dark-3_r
                     w-full py-2 px-4  m-2
                     rounded-lg 
-                    focus:outline-none border-2 focus:border-indigo-300"
+                    focus:outline-none border-2 focus-border-color_r"
 
                     type="text" 
                     placeholder="Facebook Link"/>
@@ -72,7 +72,7 @@
                     class="bg-dark-3_r
                     w-full py-2 px-4  m-2
                     rounded-lg 
-                    focus:outline-none border-2 focus:border-indigo-300"
+                    focus:outline-none border-2 focus-border-color_r"
 
                     type="text" 
                     placeholder="Instagram Link"/>
@@ -84,7 +84,7 @@
                     class="bg-dark-3_r
                     w-full py-2 px-4  m-2
                     rounded-lg 
-                    focus:outline-none border-2 focus:border-indigo-300"
+                    focus:outline-none border-2 focus-border-color_r"
 
                     type="text" 
                     placeholder="Twitter Link"/>
@@ -96,7 +96,7 @@
                     class="bg-dark-3_r
                     w-full py-2 px-4  m-2
                     rounded-lg 
-                    focus:outline-none border-2 focus:border-indigo-300"
+                    focus:outline-none border-2 focus-border-color_r"
 
                     type="text" 
                     placeholder="Current Address"/>
@@ -107,7 +107,7 @@
                     class="bg-dark-3_r
                     w-full py-2 px-4  m-2
                     rounded-lg 
-                    focus:outline-none border-2 focus:border-indigo-300"
+                    focus:outline-none border-2 focus-border-color_r"
 
                     type="text" 
                     placeholder="Permanent Address"/>
@@ -119,7 +119,7 @@
                     class="bg-dark-3_r
                     w-full py-2 px-4  m-2
                     rounded-lg 
-                    focus:outline-none border-2 focus:border-indigo-300"
+                    focus:outline-none border-2 focus-border-color_r"
 
                     type="text" 
                     placeholder="Educational Institution"/>
@@ -131,7 +131,7 @@
                     class="bg-dark-3_r
                     w-full py-2 px-4  m-2
                     rounded-lg 
-                    focus:outline-none border-2 focus:border-indigo-300"
+                    focus:outline-none border-2 focus-border-color_r"
 
                     type="text" 
                     placeholder="Major Subject"/>
@@ -143,7 +143,7 @@
                     class="bg-dark-3_r
                     w-full py-2 px-4  m-2
                     rounded-lg 
-                    focus:outline-none border-2 focus:border-indigo-300"
+                    focus:outline-none border-2 focus-border-color_r"
 
                     type="text" 
                     placeholder="Blood Group"/>

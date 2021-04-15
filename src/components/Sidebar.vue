@@ -52,8 +52,8 @@
       <router-link :to="('/')"
                    @click="isOpen = false"
                    class="p-4 flex
-                   bg-indigo-100 
-                   hover:bg-indigo-800 hover:text-white">
+                   bg-light-2_r 
+                   hover-bg-dark-2_r hover:text-white">
 
           <span>Home</span>
         
@@ -63,9 +63,9 @@
       <router-link :to="('/info')"
                    @click="isOpen = false"
                    class="p-4 flex
-                  bg-indigo-100 
                    border-t-2 border-gray-500
-                  hover:bg-indigo-800 hover:text-white">
+                   bg-light-2_r 
+                   hover-bg-dark-2_r hover:text-white">
 
           <span>Info</span>
         
@@ -75,9 +75,9 @@
       <router-link :to="('/add')"
                    @click="isOpen = false"
                    class="p-4 flex
-                   border-t-2 border-gray-500
-                   bg-indigo-100 
-                   hover:bg-indigo-800 hover:text-white">
+                  border-t-2 border-gray-500
+                   bg-light-2_r 
+                   hover-bg-dark-2_r hover:text-white">
 
           <span>Add a student</span>
         
@@ -88,8 +88,8 @@
                    @click="isOpen = false"
                    class="p-4 flex
                    border-t-2 border-gray-500
-                   bg-indigo-100 
-                   hover:bg-indigo-800 hover:text-white">
+                   bg-light-2_r 
+                   hover-bg-dark-2_r hover:text-white">
 
           <span>Login (Admin)</span>
         

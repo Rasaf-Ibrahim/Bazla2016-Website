@@ -22,3 +22,7 @@
        text-lg md:text-xl xl:text-2xl;
    }
    
+   .heading-4_r{
+    @apply
+    text-base md:text-lg xl:text-xl;
+}

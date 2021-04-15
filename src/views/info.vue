@@ -9,15 +9,46 @@
             Student Info
         </h1>
 
+  
+        <!-- Search (Filter by name) -->
 
-        <!-- <input  v-model="search" type="text" class="text-dark_r" placeholder="Type Name.."> -->
-       
+        <div class="flex justify-center sm:inline-block">
+      
+            <div class="relative mb-2">
+
+                <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+        
+                    <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" ><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        
+                </span>
+
+                <input v-model="search"  
+                       class="p-2 pl-10  
+                       text-dark_r bg-light-2_r 
+                       rounded-md 
+                       focus:outline-none border-2  focus-border-color_r" 
+                       type="text" 
+                       placeholder="Type Name..">
+             </div>
+   
+        </div>    
+ 
+
+
+
+
+
+
+
+
+
+
 
         <!-- Name and Details button -->
-        <div v-for="student in students" :key="student.firebase_id"
+        <div v-for="student in filteredStudents" :key="student.firebase_id"
              class="flex justify-between items-center 
              p-2
-             border-t-2 border-l-2  border-color_r shadow-xl
+             border-t-2 border-l-2 border-r-2  border-color_r shadow-xl
              bg-dark-2_r hover-bg-dark-3_r transition_r">
              
 
@@ -55,7 +86,8 @@
         data() {
             return {
                 students: [],
-                search: ''
+                search: '',
+               
             }
         },
 
@@ -83,17 +115,20 @@
             })
         },
 
-    //     computed: {
-    //         filter() {
-    //             return info.value.filter((student) => {
-    //     return (
-    //       student.name
-    //         .toLowerCase()
-    //         .indexOf(searchQuery.value.toLowerCase()) != -1
-    //     );
-    //   });
-    //         }
-    //     },
+      computed: {
+    filteredStudents() {
+      let filteredStudents = this.students.filter((student) => {
+        return student.name.toLowerCase().includes(this.search.toLowerCase());
+      })
+      let orderedStudents = filteredStudents.sort((a, b) => {
+        return b.upvoted - a.upvoted;
+      })
+      return orderedStudents;
+    }
+  },
+        
+
+        
 
     };
 </script>
