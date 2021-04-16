@@ -1,6 +1,6 @@
 <template>
 
-    <div class="max-w-90% sm:max-w-75% md:max-w-60% lg:max-w-50% xl:max-w-40% mx-auto">
+    <div class="max-w-90% sm:max-w-md lg:max-w-lg mx-auto">
 
 
         <!-- Title -->
@@ -12,39 +12,88 @@
  
         <!-- Form -->
 
-        <form class="mt-6 bg-white shadow-md py-8 px-8
-              rounded-lg border-2 border-indigo-200">
+        <form @submit.prevent="login"
+              class="mt-6 mb-8 bg-dark-2_r shadow-md py-8 px-8
+              rounded-lg border-2 border-color_r">
+ 
 
-                
+            
+            
+             <!-- Email -->
 
-                <input class="bg-gray-100 
-                        w-full py-2 px-4  m-2
-                        rounded-lg 
-                        focus:outline-none border-2 focus:border-indigo-200"
+            <input  v-model="email"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 
+                    focus-border-color_r"
 
-                        type="email"
-                        placeholder="Email" />
-                
-
-                <button class="btn_r btn-transition-scale_r btn-color_r
-                         w-full py-2 px-4 rounded-lg m-2"
-                        Login
-                        type="submit">
-                </button>
-
-
-            </form>
-
-        </div>
+                    type="text"
+                    placeholder="Email"
+                    required />
 
 
+           <!-- Password -->
+
+            <input  v-model="password"
+                    class="bg-dark-3_r
+                    w-full py-2 px-4  m-2
+                    rounded-lg 
+                    focus:outline-none border-2 focus-border-color_r"
+
+                    type="text" 
+                    placeholder="Password"
+                    required/>
+
+
+            <button 
+                    class="btn_r btn-transition-scale_r btn-color_r
+                    w-full py-2 px-4 rounded-lg m-2"
+                    type="submit">
+                    Submit
+            </button>
+
+        </form>
+
+    </div>
+
+    
                  
 </template>
 
 <script>
+
+import firebase from 'firebase'
+
     export default {
         name:'login',
+
+        data() {
+            return {
+                email: '',
+                password: ''
+            }
+        },
+
+        methods: {
+            login(event) {
+                
+                
+                firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(admin=>{
+                    alert(`Hello Admin! You are logged in. Now do whatever the heck you want!`);
+                    this.$router.push('/');
+            },
+            err =>{
+                alert(err.message);
+            }
+         );
+
+
+         event.preventDefault();
+
+        }
         
+    }
     }
 </script>
 

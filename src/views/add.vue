@@ -37,7 +37,9 @@
             <input v-model="name"
                     class="bg-dark-3_r
                     w-full py-2 px-4  m-2
-                    rounded-lg"
+                    rounded-lg 
+                    focus:outline-none border-2 
+                    focus-border-color_r"
 
                     type="text"
                     placeholder="Name"

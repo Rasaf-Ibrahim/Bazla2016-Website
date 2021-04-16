@@ -2,13 +2,13 @@ import firebase from 'firebase'
 
 
 const firebaseConfig = {
-       apiKey: "AIzaSyDpiZ3FQKUGIpiM2W22qaxaSBh0sFkp0Ys",
-       authDomain: "bazla16.firebaseapp.com",
-       projectId: "bazla16",
-       storageBucket: "bazla16.appspot.com",
-       messagingSenderId: "263769136260",
-       appId: "1:263769136260:web:a8cd897a95702ed50cf6d1",
-       measurementId: "G-0QRYK3QLRR"
+       apiKey: "AIzaSyBFW83XroC4V_v8t2fjyrChf8UzZymW0L4",
+       authDomain: "rb16day.firebaseapp.com",
+       projectId: "rb16day",
+       storageBucket: "rb16day.appspot.com",
+       messagingSenderId: "704633849354",
+       appId: "1:704633849354:web:ef648235f70952021441f3",
+       measurementId: "G-89BJCQBHSN"
 }
    
    

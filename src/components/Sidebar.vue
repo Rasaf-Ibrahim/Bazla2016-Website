@@ -8,8 +8,10 @@
         <!-- Topbar: Site Title  -->
         <router-link :to="('/')"
                     class="heading-2_r font-cursive-1 italic ">
-             Bazla16Day
+                     RB16Day
         </router-link>
+
+        
 
 
         <!-- Hamburger Menu -->
@@ -32,12 +34,12 @@
       leave-to-class="opacity-0"
     >
       <div
-        @keydown.esc="isOpen = false"
-        v-show="isOpen"
+        @keydown.esc="sidebarOpen = false"
+        v-show="sidebarOpen"
         class="z-10 fixed inset-0 transition-opacity"
       >
         <div
-          @click="isOpen = false"
+          @click="sidebarOpen = false"
           class="absolute inset-0 bg-black opacity-50"
           tabindex="0"
         ></div>
@@ -45,12 +47,12 @@
     </transition>
 
     <aside
-      class="font-bold  transform top-0 right-0 w-64 bg-gray-100 fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30"
-      :class="isOpen ? 'translate-y-0' : 'translate-x-full'">
+      class="font-bold  transform top-0 right-0 w-64 bg-light-1_r fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30"
+      :class="sidebarOpen ? 'translate-y-0' : 'translate-x-full'">
    
 
       <router-link :to="('/')"
-                   @click="isOpen = false"
+                   @click="sidebarOpen = false"
                    class="p-4 flex
                    bg-light-2_r 
                    hover-bg-dark-2_r hover:text-white">
@@ -61,7 +63,7 @@
 
 
       <router-link :to="('/info')"
-                   @click="isOpen = false"
+                   @click="sidebarOpen = false"
                    class="p-4 flex
                    border-t-2 border-gray-500
                    bg-light-2_r 
@@ -72,30 +74,52 @@
       </router-link>
 
 
+
+
+
+      <div class="bg-red-800 text-center py-2 mt-16 text-white">
+        Admin Panel
+      
+      </div>
+
       <router-link :to="('/add')"
-                   @click="isOpen = false"
+                   @click="sidebarOpen = false"
                    class="p-4 flex
                   border-t-2 border-gray-500
                    bg-light-2_r 
                    hover-bg-dark-2_r hover:text-white">
 
-          <span>Add a student</span>
+          <span>Add a student </span>
         
       </router-link>
 
 
        <router-link :to="('/login')"
-                   @click="isOpen = false"
+                   @click="sidebarOpen = false"
                    class="p-4 flex
                    border-t-2 border-gray-500
                    bg-light-2_r 
                    hover-bg-dark-2_r hover:text-white">
 
-          <span>Login (Admin)</span>
+          <span>Login </span>
         
       </router-link>
 
+      <div @click="logout"
+          class="p-4 flex
+          border-t-2 border-gray-500
+          bg-light-2_r 
+          hover-bg-dark-2_r hover:text-white">
 
+          <span>Logout</span>
+        
+        </div>
+
+
+       
+        
+
+      
     
 
     
@@ -122,35 +146,35 @@
 
 
 <script>
+import firebase from "firebase"
+
     export default {
         name: 'Sidebar',
         
          data() {
       return {
-        isOpen: false
+        sidebarOpen: false,
+        isloggedIn:false,
+        admin: false,
+      
+
+
+  
       };
     },
     methods: {
       drawer() {
-        this.isOpen = !this.isOpen;
-      }
+        this.sidebarOpen = !this.sidebarOpen;
+      },
+
+      logout() {
+        firebase.auth().signOut().then(()=>{
+          this.$router.push('/')
+          this.sidebarOpen=false
+        })
+      },
     },
-    // watch: {
-    //   isOpen: {
-    //     immediate: true,
-    //     handler(isOpen) {
-    //       if (process.client) {
-    //         if (isOpen) document.body.style.setProperty("overflow", "hidden");
-    //         else document.body.style.removeProperty("overflow");
-    //       }
-    //     }
-    //   }
-    // },
-    // mounted() {
-    //   document.addEventListener("keydown", e => {
-    //     if (e.keyCode == 27 && this.isOpen) this.isOpen = false;
-    //   });
-    // }
+    
 
 
     }
