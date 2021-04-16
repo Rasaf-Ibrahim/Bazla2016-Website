@@ -82,7 +82,43 @@
       
       </div>
 
+     
+
+     
+       <router-link :to="('/login')"
+                    v-if="!loggedIn"
+                   @click="sidebarOpen = false"
+                   class="p-4 flex
+                   border-t-2 border-gray-500
+                   bg-light-2_r 
+                   hover-bg-dark-2_r hover:text-white">
+
+          <span>Login </span>
+        
+      </router-link>
+
+      
+   
+      <div v-if="loggedIn"
+          @click="logout"
+          class="p-4 flex
+          border-t-2 border-gray-500
+          bg-light-2_r 
+          hover-bg-dark-2_r hover:text-white">
+
+          <span>Logout</span>
+        
+        </div>
+
+
+
+
+
+
+
+
       <router-link :to="('/add')"
+                   v-if="loggedIn"
                    @click="sidebarOpen = false"
                    class="p-4 flex
                   border-t-2 border-gray-500
@@ -94,27 +130,11 @@
       </router-link>
 
 
-       <router-link :to="('/login')"
-                   @click="sidebarOpen = false"
-                   class="p-4 flex
-                   border-t-2 border-gray-500
-                   bg-light-2_r 
-                   hover-bg-dark-2_r hover:text-white">
+      
 
-          <span>Login </span>
-        
-      </router-link>
-
-      <div @click="logout"
-          class="p-4 flex
-          border-t-2 border-gray-500
-          bg-light-2_r 
-          hover-bg-dark-2_r hover:text-white">
-
-          <span>Logout</span>
-        
-        </div>
-
+       
+  
+     
 
        
         
@@ -154,14 +174,24 @@ import firebase from "firebase"
          data() {
       return {
         sidebarOpen: false,
-        isloggedIn:false,
-        admin: false,
+        loggedIn: false
       
-
-
-  
       };
     },
+     
+
+     created () {
+       firebase.auth().onAuthStateChanged(user=> {
+         if(user){
+           this.loggedIn = true;
+         }  
+         else{
+           this.loggedIn=false;
+         }
+       })
+     },
+   
+
     methods: {
       drawer() {
         this.sidebarOpen = !this.sidebarOpen;
@@ -169,7 +199,7 @@ import firebase from "firebase"
 
       logout() {
         firebase.auth().signOut().then(()=>{
-          this.$router.push('/')
+          this.$router.go('/')
           this.sidebarOpen=false
         })
       },
