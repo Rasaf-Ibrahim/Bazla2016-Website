@@ -1,0 +1,12 @@
+ /* Border Color */
+ 
+ .border-color_r{
+    @apply border-red-100;
+}
+
+
+ /* Focus:Border color */
+ 
+ .focus-border-color_r{
+    @apply focus:border-gray-900;
+}

@@ -1,0 +1,55 @@
+/* Background */
+ 
+.bg-light-1_r{
+    @apply bg-gray-100;
+}
+
+.bg-light-2_r{
+    @apply bg-gray-200;
+}
+
+.bg-light-3_r{
+    @apply bg-gray-300;
+}
+
+
+.bg-dark-1_r{
+    @apply bg-gray-900;
+}
+
+.bg-dark-2_r{
+    @apply bg-gray-800;
+}
+
+.bg-dark-3_r{
+    @apply bg-gray-700;
+}
+
+
+
+/* Background (Hover)*/
+
+.hover-bg-light-1_r{
+    @apply hover:bg-gray-100;
+}
+
+.hover-bg-light-2_r{
+    @apply hover:bg-gray-200;
+}
+
+.hover-bg-light-3_r{
+    @apply hover:bg-gray-300;
+}
+
+
+.hover-bg-dark-1_r{
+    @apply hover:bg-gray-900;
+}
+
+.hover-bg-dark-2_r{
+    @apply hover:bg-gray-800;
+}
+
+.hover-bg-dark-3_r{
+    @apply hover:bg-gray-700;
+}

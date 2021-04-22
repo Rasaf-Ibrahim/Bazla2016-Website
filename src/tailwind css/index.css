@@ -1,0 +1,40 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Atma&family=Indie+Flower&family=Kaushan+Script&family=Lobster+Two&family=Roboto&family=Roboto+Mono&family=Train+One&family=Yatra+One&display=swap');
+
+
+/* utilities */
+@import './utilities/color/textColor.css';
+@import './utilities/color/backgroundColor.css';
+@import './utilities/color/moreColor.css';
+@import './utilities/fontSize.css';
+
+
+/* components */
+@import './components/button.css';
+@import './components/navigationCard.css';
+
+/* random */
+@import './random.css';
+
+
+
+/* tailwind css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

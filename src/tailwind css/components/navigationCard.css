@@ -1,0 +1,28 @@
+.navigation-card-grandparent-sm_r{
+    @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8
+    text-center;
+}
+
+
+.navigation-card-parent-sm_r{
+@apply w-32  p-8
+justify-self-center
+border-2  rounded-xl
+flex flex-col items-center;
+}
+
+
+
+
+.navigation-card-grandparent-bg_r{
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8
+    text-center;
+}
+
+
+.navigation-card-parent-bg_r{
+@apply w-56  p-8
+justify-self-center
+border-2  rounded-xl
+flex flex-col items-center;
+}

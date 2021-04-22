@@ -1,0 +1,67 @@
+/* Global Color Style (Specially for this project) */
+
+
+ /* 
+When you are using indigo as background color, use red as the border color,pink as the button color.
+ 
+ When you are using gray as background color, use indigo as the border color,pink as the button color.
+ 
+when you are using green as the background color, use red as the background color, red as the button color. 
+
+*/
+
+
+
+
+
+/* Text (Black & White) */
+
+.text-light_r{
+    @apply text-white;
+ }
+ 
+ .text-dark_r{
+    @apply text-gray-800;
+ }
+ 
+ .hover-text-light_r{
+    @apply hover:text-white;
+ }
+ 
+ .hover-text-dark_r{
+    @apply hover:text-gray-800;
+ }
+
+
+
+/* Colorful Text */
+
+.text-light-red_r{
+    @apply text-red-500
+}
+
+.text-dark-red_r{
+    @apply text-red-700
+}
+
+
+.text-light-green_r{
+    @apply text-green-400
+}
+
+.text-dark-green_r{
+    @apply text-green-800
+}
+ 
+
+
+
+ 
+
+
+ 
+
+ 
+ 
+ 
+ 

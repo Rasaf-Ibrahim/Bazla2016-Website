@@ -1,0 +1,7 @@
+
+.transition_r{
+    @apply
+    transition
+    ease-out
+    duration-300;
+}
