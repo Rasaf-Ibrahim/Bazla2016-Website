@@ -1,6 +1,6 @@
 <template>
-  
-<div class="bg-dark-2_r p-8">
+
+<div class="bg-dark-2_r p-8" style="background-image: url(../assets/1.jpg)">
 
     <div class ="text-center heading-2_r font-cursive-2">
     Day shift
@@ -12,7 +12,7 @@
 
 
 
-         <router-link :to="('/day/student-list')" 
+         <router-link :to="{ name: 'listDay'}"
                        class="navigation-card-parent-bg_r
                         border-color_r 
                         bg-light-3_r hover:bg-transparent
@@ -28,7 +28,7 @@
 
 
 
-        <router-link :to="('/day/blood-group')" 
+        <router-link :to="{ name: 'allGroupDay'}" 
                      class="navigation-card-parent-bg_r
                         border-color_r 
                         bg-light-3_r hover:bg-transparent
@@ -109,6 +109,8 @@
 
 
 
+
+
    
 
         
@@ -131,5 +133,10 @@
 
   
 </template>
+
+
+
+
+
 
 

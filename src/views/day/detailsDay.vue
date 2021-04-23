@@ -175,7 +175,7 @@
 
 
 
-             <router-link :to="{name:'update', params:{id:id_firebase.id}}">
+             <router-link :to="{name:'editDay', params:{id:id_firebase.id}}">
 
                 <button class="btn_r btn-transition-scale_r btn-color_r">
                         Edit
@@ -184,7 +184,7 @@
             </router-link>
 
 
-            <router-link :to="{name:'remove', params:{id:id_firebase.id}}">
+            <router-link :to="{name:'deleteDay', params:{id:id_firebase.id}}">
 
                 <button class="btn_r btn-transition-scale_r btn-color_r">
                         Delete

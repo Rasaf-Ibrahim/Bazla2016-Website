@@ -166,7 +166,7 @@
 
 <script>
 
- import { database } from '../firebaseConfig';
+ import { database } from '../../firebaseConfig';
 
     export default {
         name: 'detail',
@@ -179,7 +179,7 @@
         },
 
         created() {
-            let db = database.collection('info').doc(this.$route.params.id);
+            let db = database.collection('day').doc(this.$route.params.id);
             db.get().then((doc) => {
 
                 this.id_firebase = doc;
@@ -194,10 +194,10 @@
            methods: {
             updateform(event) {
                 event.preventDefault()
-                database.collection('info').doc(this.$route.params.id)
+                database.collection('day').doc(this.$route.params.id)
                 .update(this.student).then(() => {
                     console.log("User successfully updated!");
-                    this.$router.push({ name: 'detail', params: { id: this.id_firebase.id }})
+                    this.$router.push({ name: 'detailsDay', params: { id: this.id_firebase.id }})
                 }).catch((error) => {
                     console.log(error);
                 });
@@ -212,6 +212,3 @@
        
 </script>
 
-<style scoped>
-
-</style>

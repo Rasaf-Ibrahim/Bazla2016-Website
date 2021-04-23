@@ -6,9 +6,9 @@
         <div class="flex justify-between">
 
         <!-- Topbar: Site Title  -->
-        <router-link :to="('/')"
+        <router-link :to="{name:'home'}"
                     class="heading-2_r font-cursive-1 italic ">
-                     RB16Day
+                     Bazla2016
         </router-link>
          
 
@@ -31,7 +31,7 @@
         
         <div class="flex justify-center">
           
-          <router-link :to="('/admin-page')"
+          <router-link :to="{name:'adminPage'}"
                    v-if="loggedIn"
                    @click="sidebarOpen = false"
                     class="bg-dark-1_r text-light_r p-1 btn-transition-scale_r shadow-lg">
@@ -77,7 +77,7 @@
       :class="sidebarOpen ? 'translate-y-0' : 'translate-x-full'">
    
 
-      <router-link :to="('/')"
+      <router-link :to="{name:'home'}"
                    @click="sidebarOpen = false"
                    class="p-4 flex
                    bg-light-2_r 
@@ -88,7 +88,7 @@
       </router-link>
 
 
-      <router-link :to="('/info')"
+      <router-link :to="{name:'listDay'}"
                    @click="sidebarOpen = false"
                    class="p-4 flex
                    border-t-2 border-gray-500
@@ -100,7 +100,7 @@
       </router-link>
 
 
-      <router-link :to="('/day/blood-group')"
+      <router-link :to="{name:'allGroupDay'}"
                    @click="sidebarOpen = false"
                    class="p-4 flex
                    border-t-2 border-gray-500
@@ -130,7 +130,7 @@
      
 
      
-        <router-link :to="('/admin-Page')"
+        <router-link :to="{name:'adminPage'}"
                    v-if="loggedIn"
                    @click="sidebarOpen = false"
                    class="p-4 flex
@@ -144,7 +144,7 @@
 
 
 
-      <router-link :to="('/add')"
+      <router-link :to="{name:'addDay'}"
                    v-if="loggedIn"
                    @click="sidebarOpen = false"
                    class="p-4 flex
@@ -152,13 +152,13 @@
                    bg-light-2_r 
                    hover-bg-dark-2_r hover:text-white">
 
-          <span>Add a student </span>
+          <span>Add a student (Day) </span>
         
       </router-link>
 
  
 
-       <router-link :to="('/roll')"
+       <router-link :to="{name:'rollDay'}"
                    v-if="loggedIn"
                    @click="sidebarOpen = false"
                    class="p-4 flex
@@ -175,7 +175,7 @@
 
        <!-- Login -->
 
-       <router-link :to="('/login')"
+       <router-link :to="{name:'login'}"
                     v-if="!loggedIn"
                    @click="sidebarOpen = false"
                    class="p-4 flex justify-center
@@ -244,9 +244,9 @@
 import firebase from "firebase"
 
     export default {
-        name: 'Sidebar',
+     
         
-         data() {
+    data() {
       return {
         sidebarOpen: false,
         loggedIn: false
@@ -274,7 +274,7 @@ import firebase from "firebase"
 
       logout() {
         firebase.auth().signOut().then(()=>{
-          this.$router.go('/')
+          this.$router.go({ name: 'home'})
           this.sidebarOpen=false
         })
       },

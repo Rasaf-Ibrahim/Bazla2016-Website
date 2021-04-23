@@ -71,7 +71,7 @@
 
 
 
-           <router-link :to="{ name:'detail', params: {id: student.firebase_id}}"   
+           <router-link :to="{ name:'detailsDay', params: {id: student.firebase_id}}"   
                         class="mt-4 btn_r btn-transition-scale_r btn-color_r
                        col-span-12 md:col-span-2 justify-self-center">
 
@@ -94,7 +94,7 @@
  import { database } from '../../firebaseConfig';
 
     export default {
-        name: 'roll',
+      
         data() {
             return {
                 students: [],
@@ -104,7 +104,7 @@
         },
 
         created() {
-            database.collection('info').orderBy('id').onSnapshot((snapshotChange) => {
+            database.collection('day').orderBy('id').onSnapshot((snapshotChange) => {
                 this.students = [];
                 snapshotChange.forEach((doc) => {
                     this.students.push({

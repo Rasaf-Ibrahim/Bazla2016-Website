@@ -63,6 +63,7 @@
 
 <script>
 
+
 import firebase from 'firebase'
 
     export default {
@@ -81,7 +82,7 @@ import firebase from 'firebase'
                 
                 firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(admin=>{
                     alert(`Hello Admin! You are logged in.`);
-                    this.$router.push('/admin-page');
+                    this.$router.push({ name: 'adminPage'});
             },
             err =>{
                 alert(err.message);

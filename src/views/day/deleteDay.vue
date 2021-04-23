@@ -59,9 +59,9 @@
         methods: {
             deleteUser(id_parameter){
               if (window.confirm("ডিলিট কিন্তু করেই ফেললাম!")) {
-                database.collection('info').doc(id_parameter).delete().then(() => {
+                database.collection('day').doc(id_parameter).delete().then(() => {
                     console.log("Document deleted!");
-                    this.$router.push('/info')
+                    this.$router.push({ name: 'listDay'})
                 })
                 .catch((error) => {
                     console.error(error);

@@ -60,7 +60,7 @@
 
 
 
-           <router-link :to="{ name:'detail', params: {id: student.firebase_id}}"   
+           <router-link :to="{ name:'detailsDay', params: {id: student.firebase_id}}"   
                         class="btn_r btn-transition-scale_r btn-color_r">
 
                          Details
@@ -82,7 +82,7 @@
  import { database } from '../../../firebaseConfig';
 
     export default {
-        
+   
         data() {
             return {
                 students: [],
@@ -92,34 +92,41 @@
         },
 
         created() {
-            database.collection('info').where('blood_group', '==', 'B-').onSnapshot((snapshotChange) => {
+            database.collection('day').where('blood_group', '==', 'B-').onSnapshot((snapshotChange) => {
                 this.students = [];
                 snapshotChange.forEach((doc) => {
                     this.students.push({
                         firebase_id: doc.id,
                         id: doc.data().id,
                         name: doc.data().name,
+                        current_address: doc.data().current_address,
+                        permanent_address: doc.data().permanent_address,
+                        university: doc.data().university,
+                        university_department: doc.data().university_department,
+                        job_institution: doc.data().job_institution,
+                        job_title: doc.data().job_title,
+                        mobile: doc.data().mobile,
+                        facebook_link: doc.data().facebook_link,
+                        instagram_link: doc.data().instagram_link,
+                        twitter_link: doc.data().twitter_link,
                         blood_group: doc.data().blood_group,
                     })
                 });
             })
         },
 
-      computed: {
+  computed: {
     filteredStudents() {
       let filteredStudents = this.students.filter((student) => {
         return student.name.toLowerCase().includes(this.search.toLowerCase());
       })
-      let orderedStudents = filteredStudents.sort((a, b) => {
-        return b.upvoted - a.upvoted;
-      })
-      return orderedStudents;
+      
+      return filteredStudents;
     }
   },
-        
 
-        
-
+ 
+      
     };
 </script>
 

@@ -13,6 +13,9 @@ import home from '../views/home.vue'
 
 
 // Day Shift
+import addDay from '../views//day/addDay.vue'
+import editDay from '../views/day/editDay.vue'
+import deleteDay from '../views/day/deleteDay.vue'
 import listDay from '../views/day/listDay'
 import detailsDay from '../views/day/detailsDay'
 import allGroupDay from '../views/day/blood/allGroupDay'
@@ -22,7 +25,7 @@ import abPositiveDay from '../views/day/blood/abPositiveDay'
 import abNegativeDay from '../views/day/blood/abNegativeDay'
 import bPositiveDay from '../views/day/blood/bPositiveDay'
 import bNegativeDay from '../views/day/blood/bNegativeDay'
-import oPositiveDay from '../views/day/blood/oPositiveDay'
+import oPositiveDay from '../views//day/blood/oPositiveDay'
 import oNegativeDay from '../views/day/blood/oNegativeDay'
 
 
@@ -33,10 +36,9 @@ import oNegativeDay from '../views/day/blood/oNegativeDay'
 // Admin Pages
 import login from '../views/login.vue'
 import adminPage from '../views/admin/adminPage.vue'
-import add from '../views/add.vue'
-import update from '../views/update.vue'
-import remove from '../views/admin/remove.vue'
-import roll from '../views/admin/roll.vue'
+
+
+import rollDay from '../views/admin/rollDay.vue'
 
 // Firebase
 import firebase from 'firebase' 
@@ -58,30 +60,9 @@ routes: [
   },
   
   
-  {
-    path: '/add',
-    name: 'add',
-    component: add,
-    meta: {
-      requiresAuth: true
-    }
-  },
-  {
-    path: '/edit/:id',
-    name: 'update',
-    component: update,
-    meta: {
-      requiresAuth: true
-    }
-  },
-  {
-    path: '/delete/:id',
-    name: 'remove',
-    component: remove,
-    meta: {
-      requiresAuth: true
-    }
-  },
+  
+  
+
   {
     path: '/login',
     name: 'login',
@@ -99,6 +80,33 @@ routes: [
   // ***** Day Shift ***** 
 
 
+ {
+    path: '/day/add',
+    name: 'addDay',
+    component: addDay,
+    meta: {
+     requiresAuth: true
+    }
+  },
+
+  {
+    path: '/day/edit/:id',
+    name: 'editDay',
+    component: editDay,
+    meta: {
+      requiresAuth: true
+    }
+  },
+
+  {
+    path: '/day/delete/:id',
+    name: 'deleteDay',
+    component: deleteDay,
+    meta: {
+      requiresAuth: true
+    }
+  },
+
   {
     path: '/day/student-list',
     name: 'listDay',
@@ -111,6 +119,7 @@ routes: [
     name: 'detailsDay',
     component: detailsDay
   },
+
   
   {
     path: '/day/blood-group',
@@ -178,8 +187,8 @@ routes: [
 
   {
     path: '/roll',
-    name: 'roll',
-    component: roll,
+    name: 'rollDay',
+    component: rollDay,
     meta: {
       requiresAuth: true
     }

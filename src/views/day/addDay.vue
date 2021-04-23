@@ -178,9 +178,9 @@
 </template>
 
 <script>
- import { database } from '../firebaseConfig';
+ import { database } from '../../firebaseConfig';
     export default {
-        name: 'add',
+    
         data() {
              return {
 
@@ -203,7 +203,7 @@
 
         methods: {
             save() {
-                database.collection('info').add({
+                database.collection('day').add({
                     id: this.id,
                     name: this.name,
                     mobile: this.mobile,
@@ -218,7 +218,7 @@
                     job_title: this.job_title,
                     blood_group: this.blood_group  
                 })
-                .then(docRef => this.$router.push('/info'))
+                .then(docRef => this.$router.push({ name: 'listDay'}))
                 .catch(error => console.log(err))
             }
         },
@@ -227,6 +227,3 @@
     }
 </script>
 
-<style scoped>
-
-</style>
