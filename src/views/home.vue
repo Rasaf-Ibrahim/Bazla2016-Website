@@ -1,6 +1,6 @@
 <template>
 
-<div class="bg-dark-2_r p-8" style="background-image: url(../assets/1.jpg)">
+<div class="bg-dark-2_r p-8" >
 
     <div class ="text-center heading-2_r font-cursive-2">
     Day shift
