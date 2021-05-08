@@ -2,11 +2,21 @@
 
 .btn-color_r{
     @apply
-    bg-pink-800
-    hover:bg-pink-600
+    bg-green-800
+    hover:bg-green-600
     text-white;
 }
 
+.btn-color-ghost_r{
+
+    @apply
+    border-2
+    text-green-600
+    border-green-600
+    hover:bg-green-600
+    hover:text-white;
+
+}
 
 
 
@@ -15,6 +25,7 @@
 
 .btn_r{
     @apply 
+    inline-block
     cursor-pointer
     focus:outline-none
     rounded-lg

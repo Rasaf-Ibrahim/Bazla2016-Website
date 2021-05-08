@@ -58,6 +58,7 @@ module.exports = {
       outline: ['hover', 'active'],
       transitionDelay: ['hover', 'focus'],
       transformOrigin: ['hover', 'focus'],
+      backgroundOpacity: ['active'],
     },
 
   },
