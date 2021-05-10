@@ -49,7 +49,7 @@
              class="flex justify-between items-center 
              p-2
              border-t-2 border-l-2 border-r-2  border-color_r shadow-xl
-             bg-dark-2_r hover-bg-dark-3_r transition_r">
+             bg-dark-2_r hover:bg-transparent transition_r">
              
 
 

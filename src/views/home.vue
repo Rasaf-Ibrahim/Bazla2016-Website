@@ -1,15 +1,20 @@
 <template>
 
+<div>
 
-<div class="bg-fixed bg-no-repeat bg-cover bg-center" style="background-image:url(https://scontent.fdac26-1.fna.fbcdn.net/v/t1.6435-9/93784208_1619437221549602_4994108179886374912_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=825194&_nc_ohc=QEY5S7E8xDkAX9JOqWE&_nc_ht=scontent.fdac26-1.fna&oh=92fb7e6dc10f2469ef637ef73b6ac742&oe=60BC12CC);">
-
-<div class=" p-8 "  >
+<div class="p-8">
      
-    <div class="grid grid-cols-1">
-        <span class ="bg-light-2_r text-dark_r rounded-full heading-2_r font-cursive-2 justify-self-center py-2 px-4">
-        Day shift
-        </span>
-    </div>
+   <!-- Title -->
+
+        <div class = "text-center
+             text-light_r 
+             heading-2_r font-cursive-2 ">
+                Day shift
+        </div>
+
+
+     <!-- Categories -->
+
 
     <div class="mt-8 md:mt-16 mb-16
          navigation-card-grandparent-bg_r
@@ -20,8 +25,10 @@
          <router-link :to="{ name: 'listDay'}"
                        class="navigation-card-parent-bg_r
                         border-color_r 
-                        bg-light-2_r hover:bg-transparent
-                        heading-3_r text-dark_r hover-text-light_r
+                        bg-gradient-to-r from-gray-400 to-gray-200
+                        hover:bg-gradient-to-r hover:from-transparent hover:to-transparent
+                        heading-3_r text-dark_r 
+                        hover-text-light_r
                         btn-transition-scale_r">
 
                          
@@ -36,8 +43,10 @@
         <router-link :to="{ name: 'allGroupDay'}" 
                      class="navigation-card-parent-bg_r
                         border-color_r 
-                        bg-light-2_r hover:bg-transparent
-                        heading-3_r text-dark_r hover-text-light_r
+                        bg-gradient-to-r from-gray-400 to-gray-200
+                        hover:bg-gradient-to-r hover:from-transparent hover:to-transparent
+                        heading-3_r text-dark_r 
+                        hover-text-light_r
                         btn-transition-scale_r">
 
              
@@ -62,11 +71,18 @@
 
 <div class="p-8">
 
-    <div class="grid grid-cols-1">
-        <span class ="bg-gradient-to-r from-gray-400 to-gray-800  rounded-full heading-2_r font-cursive-2 justify-self-center py-2 px-8 md:px-16">
-        Morning shift
-        </span>
-    </div>
+
+    <!-- Title -->
+
+        <div class = "text-center
+             heading-2_r font-cursive-2 ">
+                Morning shift
+        </div>
+
+
+
+     <!-- Categories -->
+
 
     <div class="mt-8 md:mt-16 mb-16
          navigation-card-grandparent-bg_r
@@ -79,9 +95,8 @@
                         border-color_r 
                         bg-gradient-to-r from-gray-400 to-gray-200
                         hover:bg-gradient-to-r hover:from-transparent hover:to-transparent
-
                         heading-3_r text-dark_r 
-                       hover-text-light_r
+                        hover-text-light_r
                         btn-transition-scale_r">
 
                          
@@ -96,8 +111,10 @@
         <router-link :to="('/day/blood-group')" 
                      class="navigation-card-parent-bg_r
                         border-color_r 
-                        bg-light-2_r hover:bg-transparent
-                        heading-3_r text-dark_r hover-text-light_r
+                        bg-gradient-to-r from-gray-400 to-gray-200
+                        hover:bg-gradient-to-r hover:from-transparent hover:to-transparent
+                        heading-3_r text-dark_r 
+                        hover-text-light_r
                         btn-transition-scale_r">
 
              
