@@ -11,7 +11,7 @@
 
  
         <router-link :to="{name:'home'}"
-                    class="heading-2_r font-cursive-1 italic ">
+                    class="heading-2_r font-cursive-1 ">
                      Bazla2016
         </router-link>
          
