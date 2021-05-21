@@ -77,7 +77,7 @@
 <!-- Sidebar -->
 
 <aside :class="sidebarOpen ? 'translate-y-0' : 'translate-x-full'"
-       class="bg-dark-3_r text-light_r 
+       class="bg-gradient-to-r from-gray-600 to-gray-900 text-light_r 
        font-bold  
        transform top-0 right-0 w-64 fixed h-full overflow-auto ease-in-out      transition-all duration-300 z-30">
 
