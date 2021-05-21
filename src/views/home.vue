@@ -90,7 +90,7 @@
 
 
 
-         <router-link :to="('/day/student-list')" 
+         <router-link :to="{name:'morning'}" 
                        class="navigation-card-parent-bg_r
                         border-color_r 
                         bg-gradient-to-r from-gray-400 to-gray-200
@@ -108,7 +108,7 @@
 
 
 
-        <router-link :to="('/day/blood-group')" 
+        <router-link :to="{name:'morning'}" 
                      class="navigation-card-parent-bg_r
                         border-color_r 
                         bg-gradient-to-r from-gray-400 to-gray-200

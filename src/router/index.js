@@ -29,6 +29,10 @@ import oPositiveDay from '../views//day/blood/oPositiveDay'
 import oNegativeDay from '../views/day/blood/oNegativeDay'
 
 
+// Day Shift
+import morning from '../views/morning.vue'
+
+
 
 
 
@@ -178,6 +182,16 @@ routes: [
     path: '/day/blood-group/oNegative',
     name: 'oNegativeDay',
     component: oNegativeDay
+    
+  },
+
+
+  // Morning Shift
+
+  {
+    path: '/morning',
+    name: 'morning',
+    component: morning
     
   },
 

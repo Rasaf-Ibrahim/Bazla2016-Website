@@ -117,7 +117,7 @@
   </router-link>
 
 
-  <router-link :to="{name:'listDay'}"
+  <router-link :to="{name:'morning'}"
                @click="sidebarOpen = false"
                class="p-4 flex
                border-t-2 border-gray-300 
